@@ -1,6 +1,7 @@
 const emagify = require('./emagify.js');
 const randomElement = require('./emagi-random.js');
 const emagiSearch = require('./emagi-search.js');
+const madlibThis = require('./madlibs.js');
 
 const userInput = process.argv.slice(2);
 const userFunction = userInput[0];
@@ -22,6 +23,10 @@ switch(userFunction) {
 
     case 'random':
         result = randomElement(userParameters);
+        break;
+
+    case 'madlibs':
+        result = madlibThis(userParameters);
         break;
 
     default:
