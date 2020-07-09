@@ -11,6 +11,9 @@ switch(userFunction) {
     case 'search':
         let searchFor = userParameters[0];
         result = emagiSearch(searchFor).join(" ");
+        if(result === "") {
+            result = "Your search found no results.";
+        }
         break;
 
     case 'convert':
@@ -23,7 +26,9 @@ switch(userFunction) {
 
     default:
         result = "I don't understand your input function. " +  
-        "It's the first word after main.js.";
+        "It's the first word after main.js. I accept the following " +
+        "terms:\n convert [emoji1 emoji2 ...], search [emoji], " +
+        "and random [emoji1 emoji2 ...]";
         break;
 }
 
